@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.mhcc.notice.grpc.entity";
+option java_outer_classname = "HelloWorldProto";
+
+service NoticeService {
+  rpc GetNoticeHistory (GetNoticeHistoryReq) returns (GetNoticeHistoryRes) {}
+}
+
+message GetNoticeHistoryReq {
+  string name = 1;
+}
+
+message GetNoticeHistoryRes {
+  string message = 1;
+}
