@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.mhcc.notice.proto";
+option java_outer_classname = "NoticeServerProto";
+
+service NoticeService {
+  rpc GetNoticesHistory (GetNoticesHistoryReq) returns (GetNoticesHistoryRes) {}
+}
+
+message GetNoticesHistoryReq {
+  string name = 1;
+}
+
+message GetNoticesHistoryRes {
+  string message = 1;
+}
