@@ -22,6 +22,7 @@
         <module>mhcc-notice</module>
         <!--消息服务-->
         <module>mhcc-message</module>
+        <module>mhcc-grpc</module>
     </modules>
 
     <properties>
@@ -29,8 +30,9 @@
         <lombok.version>1.18.20</lombok.version>
         <spring-boot.version>2.7.18</spring-boot.version>
         <grpc-spring-boot-starter.version>2.15.0.RELEASE</grpc-spring-boot-starter.version>
-        <protobuf-java.version>3.19.2</protobuf-java.version>
         <grpc-java.version>1.60.1</grpc-java.version>
+        <protobuf-java.version>3.19.2</protobuf-java.version>
+        <mhcc-grpc.version>0.0.1-SNAPSHOT</mhcc-grpc.version>
     </properties>
 
     <dependencyManagement>
@@ -74,6 +76,11 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mhcc</groupId>
+                <artifactId>mhcc-grpc</artifactId>
+                <version>${mhcc-grpc.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
