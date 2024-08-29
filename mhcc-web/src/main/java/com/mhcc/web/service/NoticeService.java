@@ -1,7 +1,7 @@
 package com.mhcc.web.service;
 
-import com.mhcc.web.bean.dto.GetNoticesHistoryReq;
-import com.mhcc.web.bean.dto.GetNoticesHistoryRes;
+import com.mhcc.notice.proto.GetNoticesHistoryReq;
+import com.mhcc.notice.proto.GetNoticesHistoryRes;
 
 public interface NoticeService {
 

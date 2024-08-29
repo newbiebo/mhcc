@@ -1,10 +1,23 @@
 package com.mhcc.web.service.impl;
 
-import com.mhcc.web.bean.dto.GetNoticesHistoryReq;
-import com.mhcc.web.bean.dto.GetNoticesHistoryRes;
+import com.mhcc.notice.proto.GetNoticesHistoryReq;
+import com.mhcc.notice.proto.GetNoticesHistoryRes;
+import com.mhcc.web.Interceptor.GrpcLogInterceptor;
 import com.mhcc.web.service.NoticeService;
+import com.mhcc.web.service.client.GrpcNoticeClientService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
+@Service
 public class NoticeServiceImpl implements NoticeService {
+
+    private static final Logger LOG =  LoggerFactory.getLogger(NoticeServiceImpl.class);
+
+    @Resource
+    private GrpcNoticeClientService grpcNoticeClientService;
 
     /**
      * @param getNoticesHistoryReq
@@ -12,6 +25,6 @@ public class NoticeServiceImpl implements NoticeService {
      */
     @Override
     public GetNoticesHistoryRes getNoticesHistory(GetNoticesHistoryReq getNoticesHistoryReq) {
-        return null;
+        return  grpcNoticeClientService.getNoticesHistory(getNoticesHistoryReq);
     }
 }

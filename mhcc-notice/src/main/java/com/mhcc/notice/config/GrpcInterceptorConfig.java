@@ -1,4 +1,4 @@
-package com.mhcc.notice.config.grpc;
+package com.mhcc.notice.config;
 
 import com.mhcc.notice.Interceptor.GrpcLogInterceptor;
 import io.grpc.ServerInterceptor;
