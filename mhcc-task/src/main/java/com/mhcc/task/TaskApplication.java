@@ -7,9 +7,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class TaskApplication {
-
-    private static final Logger LOG =  LoggerFactory.getLogger(TaskApplication.class);
-
     public static void main(String[] args) {
         SpringApplication.run(TaskApplication.class, args);
         System.out.println(

@@ -30,6 +30,8 @@
         <lombok.version>1.18.20</lombok.version>
         <spring-boot.version>2.7.18</spring-boot.version>
         <grpc-spring-boot-starter.version>2.15.0.RELEASE</grpc-spring-boot-starter.version>
+        <druid-spring-boot-starter.version>1.2.22</druid-spring-boot-starter.version>
+        <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
         <grpc-java.version>1.60.1</grpc-java.version>
         <protobuf-java.version>3.19.2</protobuf-java.version>
         <mhcc-grpc.version>0.0.1-SNAPSHOT</mhcc-grpc.version>
@@ -67,6 +69,16 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-jdbc</artifactId>
                 <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${mapper-spring-boot-starter.version}</version>
             </dependency>
             <dependency>
                 <groupId>net.devh</groupId>
