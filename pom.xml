@@ -37,6 +37,7 @@
 
     <dependencyManagement>
         <dependencies>
+            <!--spring framework-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter</artifactId>
@@ -58,6 +59,16 @@
                 <version>${spring-boot.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-quartz</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-jdbc</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>net.devh</groupId>
                 <artifactId>grpc-server-spring-boot-starter</artifactId>
                 <version>${grpc-spring-boot-starter.version}</version>
@@ -67,20 +78,28 @@
                 <artifactId>grpc-client-spring-boot-starter</artifactId>
                 <version>${grpc-spring-boot-starter.version}</version>
             </dependency>
+            <!--lombok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!--grpc-->
             <dependency>
                 <groupId>com.google.protobuf</groupId>
                 <artifactId>protobuf-java</artifactId>
                 <version>${protobuf-java.version}</version>
             </dependency>
             <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
-            </dependency>
-            <dependency>
                 <groupId>com.mhcc</groupId>
                 <artifactId>mhcc-grpc</artifactId>
                 <version>${mhcc-grpc.version}</version>
+            </dependency>
+            <!--database-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.13</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
