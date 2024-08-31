@@ -17,17 +17,11 @@ public class QuartzServiceImpl implements QuartzService {
 
     private static final Logger LOG =  LoggerFactory.getLogger(QuartzServiceImpl.class);
 
-    public static String SCHEDULER_OPR_START = "start";
-    public static String SCHEDULER_OPR_PAUSE = "pause";
-    public static String SCHEDULER_OPR_RESUME = "resume";
-    public static String SCHEDULER_OPR_REMOVE = "remove";
-
     @Resource
     private Scheduler scheduler;
 
     @Override
-    public void startJob(String jobName, String jobGroup, String cron,
-                         String className){
+    public void startJob(String jobName, String jobGroup, String cron, String className){
         Class<Job> jobClass = null;
         try {
             jobClass = (Class<Job>) Class.forName(className);
@@ -48,7 +42,7 @@ public class QuartzServiceImpl implements QuartzService {
         } catch (SchedulerException e) {
             throw new RuntimeException(e);
         }
-        LOG.info("--------" + jobName + " scheduler start ! "  + "------------");
+        LOG.info("jobName: {}, scheduler start! ", jobName);
     }
 
     @Override
@@ -67,8 +61,8 @@ public class QuartzServiceImpl implements QuartzService {
     }
 
     @Override
-    public void pauseJob(String taskCode, String jobGroup) throws Exception {
-        JobKey jobKey = new JobKey(taskCode, jobGroup);
+    public void pauseJob(String jobName, String jobGroup) throws Exception {
+        JobKey jobKey = new JobKey(jobName, jobGroup);
         JobDetail jobDetail = scheduler.getJobDetail(jobKey);
         if (jobDetail == null) {
             return;
@@ -77,8 +71,8 @@ public class QuartzServiceImpl implements QuartzService {
     }
 
     @Override
-    public void resumeJob(String taskCode, String jobGroup) throws Exception {
-        JobKey jobKey = new JobKey(taskCode, jobGroup);
+    public void resumeJob(String jobName, String jobGroup) throws Exception {
+        JobKey jobKey = new JobKey(jobName, jobGroup);
         JobDetail jobDetail = scheduler.getJobDetail(jobKey);
         if (jobDetail == null) {
             return;
@@ -87,8 +81,8 @@ public class QuartzServiceImpl implements QuartzService {
     }
 
     @Override
-    public void deleteJob(String taskCode, String jobGroup) throws Exception {
-        JobKey jobKey = new JobKey(taskCode, jobGroup);
+    public void deleteJob(String jobName, String jobGroup) throws Exception {
+        JobKey jobKey = new JobKey(jobName, jobGroup);
         JobDetail jobDetail = scheduler.getJobDetail(jobKey);
         if (jobDetail == null) {
             return;
