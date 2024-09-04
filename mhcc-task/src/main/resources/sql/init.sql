@@ -1,14 +1,18 @@
--- DROP TABLE IF EXISTS QRTZ_FIRED_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_PAUSED_TRIGGER_GRPS;
--- DROP TABLE IF EXISTS QRTZ_SCHEDULER_STATE;
--- DROP TABLE IF EXISTS QRTZ_LOCKS;
--- DROP TABLE IF EXISTS QRTZ_SIMPLE_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_SIMPROP_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_CRON_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_BLOB_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_TRIGGERS;
--- DROP TABLE IF EXISTS QRTZ_JOB_DETAILS;
--- DROP TABLE IF EXISTS QRTZ_CALENDARS;
+#任务表
+CREATE TABLE  IF NOT EXISTS mhcc_t_task
+(
+    id integer not null
+        primary key,
+    task_id varchar(32) null comment '任务id',
+    task_name varchar(40) null comment '任务名称',
+    task_group varchar(40) null comment '任务组',
+    task_type varchar(40) null comment '任务类型',
+    expression varchar(40) null comment 'cron表达式',
+    status varchar(40) null comment '任务状态：START-开始，STOP-结束',
+    gmt_create datetime null comment '创建时间',
+    gmt_modified datetime null comment '修改时间',
+    is_delete tinyint null comment '逻辑删除'
+) comment '任务表' charset = utf8;
 
 CREATE TABLE IF NOT EXISTS QRTZ_JOB_DETAILS
 (

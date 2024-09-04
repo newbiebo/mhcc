@@ -22,7 +22,8 @@
         <module>mhcc-notice</module>
         <!--消息服务-->
         <module>mhcc-message</module>
-        <module>mhcc-grpc</module>
+        <!--公共包-->
+        <module>mhcc-common</module>
     </modules>
 
     <properties>
@@ -34,7 +35,10 @@
         <mapper-spring-boot-starter.version>2.1.5</mapper-spring-boot-starter.version>
         <grpc-java.version>1.60.1</grpc-java.version>
         <protobuf-java.version>3.19.2</protobuf-java.version>
-        <mhcc-grpc.version>0.0.1-SNAPSHOT</mhcc-grpc.version>
+        <mhcc-common.version>0.0.1-SNAPSHOT</mhcc-common.version>
+        <common-lang3.version>3.17.0</common-lang3.version>
+        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+        <fastjson2.version>2.0.52</fastjson2.version>
     </properties>
 
     <dependencyManagement>
@@ -104,14 +108,24 @@
             </dependency>
             <dependency>
                 <groupId>com.mhcc</groupId>
-                <artifactId>mhcc-grpc</artifactId>
-                <version>${mhcc-grpc.version}</version>
+                <artifactId>mhcc-common</artifactId>
+                <version>${mhcc-common.version}</version>
             </dependency>
             <!--database-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
-                <version>8.0.13</version>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${common-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.fastjson2</groupId>
+                <artifactId>fastjson2</artifactId>
+                <version>${fastjson2.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
